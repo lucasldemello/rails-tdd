@@ -4,6 +4,10 @@ require 'calculator'
 # para inserir a classe Calculator.
 describe Calculator do
 # describe Calculator, "Sobre a Calculadora" do #TIP: subject implicito
+
+    #TIP: Subject explicito com parametros.  
+    # subject(:calc) { described_class.new(1,2,3)}
+    
     context '#sum' do
         subject(:calc) {  described_class.new() }
         it 'with positive numbers' do 
