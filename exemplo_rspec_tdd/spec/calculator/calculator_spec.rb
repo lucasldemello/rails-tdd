@@ -3,6 +3,7 @@ require 'calculator'
 # ao inves de usar a classe posso, usar um texto e na linha 6, remover o described_class 
 # para inserir a classe Calculator.
 describe Calculator do
+# describe Calculator, "Sobre a Calculadora" do #TIP: subject implicito
     context '#sum' do
         subject(:calc) {  described_class.new() }
         it 'with positive numbers' do 
