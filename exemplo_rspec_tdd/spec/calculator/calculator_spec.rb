@@ -25,4 +25,15 @@ describe Calculator do
             expect(result).to eq(-13)  
         end
     end
+
+    context "#div" do
+        it 'divided by 0' do
+            #expect{subject.div(2, 0)}.to raise_exception # Muito genérico, vai levantar um warning.
+            expect{subject.div(2, 0)}.to raise_error(ZeroDivisionError)
+            expect{subject.div(2, 0)}.to raise_error("divided by 0")
+            expect{subject.div(2, 0)}.to raise_error(ZeroDivisionError, "divided by 0") # Isola ainda mais o teste.
+            expect{subject.div(2, 0)}.to raise_error(/divided/)
+        end
+    end
+    
 end
