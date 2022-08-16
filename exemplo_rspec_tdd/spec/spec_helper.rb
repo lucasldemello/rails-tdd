@@ -18,6 +18,11 @@ require_relative '../helpers/helper'
 
 RSpec.configure do |config|
 
+  # agregador de falhas em testes.
+  # config.define_derived_metadata do |meta|
+  #   meta[:aggregate_failures] = true
+  # end
+
   # config.before(:suite) do 
   #   puts ">>>>> Executa ANTES de toda a suite"
   # end
