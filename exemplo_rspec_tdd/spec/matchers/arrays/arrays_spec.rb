@@ -1,6 +1,8 @@
 RSpec::Matchers.define_negated_matcher :exclude, :include
-
-describe Array.new([5,3,4]) do
+# describe 'all', collection: true do
+# describe 'all', type: 'collection' do
+# acima são formas equivalentes para criar as tags
+describe Array.new([5,3,4]), "Array", type: 'collection' do
   it '#include' do 
     expect(subject).to include(3)
     expect(subject).to include(5,4)
@@ -10,8 +12,7 @@ describe Array.new([5,3,4]) do
     expect(subject).to exclude(9)
   end
   
-
-  it '#contain_exactly' do
+  it '#contain_exactly', :slow do
     expect(subject).to contain_exactly(3,4,5)
   end
 
